@@ -1,0 +1,8 @@
+javac -d classes -cp .;./classes;./lib/javassist-3.12.1.GA.jar ./com.surajit.agent/DurationAgent.java
+
+
+
+jar -cvfm agent.jar ../manifest.mf ./com/surajit/agent/*.class
+
+
+java -cp .;./lib/javassist-3.12.1.GA.jar -javaagent:./agent.jar TestInstrumentation
